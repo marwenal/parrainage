@@ -16,4 +16,4 @@ web/bundles/*
 
 #configuration files
 
-app/config/parametres.ini
+app/config/parametres.yml
