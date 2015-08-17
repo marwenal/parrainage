@@ -1,0 +1,11 @@
+{% block body_text %}
+{% autoescape false %}
+Cette invitation envoyer par {{ app.user.username }} d'adresse émail {{app.user.email }}
+
+Nous vous invitons à consulter Mon site en cliquant sur le lien ci-dessus. Vous devez vous enregistrer avant de pouvoir poster: cliquez sur le lien d'inscription ci-dessus pour continuer: {{ confirmationUrl }}
+ Pour voir les messages, sélectionnez le forum que vous voulez visiter depuis la liste ci-dessous 
+Amicalement,
+Administrateur de parrainage.com
+{% endautoescape %}
+{% endblock %}
+

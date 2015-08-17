@@ -1,0 +1,25 @@
+{% block fos_user_content %}
+<script LANGUAGE='Javascript'>
+    function affiche(){
+    confirm("Voulez-vous continuer ?");
+}
+</script>
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/inscription.css')}}">
+{% trans_default_domain 'FOSUserBundle' %} 
+<article>
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    <ul>
+        <li>
+           {{ form_widget(form) }}
+        </li>
+        
+    </ul>
+<p>
+    <button type="submit" class="action"value="{{ 'registration.submit'|trans }}">Envoyer</button>
+        <button type="reset" class="right">Vider</button>
+    </p>
+    
+</form>
+</article>
+{% endblock fos_user_content %}
+    

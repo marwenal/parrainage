@@ -1,0 +1,30 @@
+cadeau:
+    pattern:  /
+    defaults: { _controller: "parrainnageBundle:Cadeau:index" }
+
+cadeau_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "parrainnageBundle:Cadeau:show" }
+
+cadeau_new:
+    pattern:  /new
+    defaults: { _controller: "parrainnageBundle:Cadeau:new" }
+
+cadeau_create:
+    pattern:  /create
+    defaults: { _controller: "parrainnageBundle:Cadeau:create" }
+    requirements: { _method: post }
+
+cadeau_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "parrainnageBundle:Cadeau:edit" }
+
+cadeau_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "parrainnageBundle:Cadeau:update" }
+    requirements: { _method: post|put }
+
+cadeau_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "parrainnageBundle:Cadeau:delete" }
+    requirements: { _method: post|delete }

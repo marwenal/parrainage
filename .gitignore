@@ -1,0 +1,19 @@
+#Bootstrap
+
+app/Bootstrap*
+
+#symfony directories
+
+vendor/*
+
+*/logs/*
+
+*/cache/*
+
+web/uploods/*
+
+web/bundles/*
+
+#configuration files
+
+app/config/parametres.ini

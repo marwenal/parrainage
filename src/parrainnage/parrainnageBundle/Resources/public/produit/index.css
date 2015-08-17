@@ -1,0 +1,165 @@
+
+.body{
+    background:url(background.jpg) no-repeat  ;
+    background-size: 100% 1000px;
+    border: 1px ;
+    animation: alternate;    
+}
+.divCategorie{
+    background: #cc00cc;
+    border: 1px ;
+    margin: 0;
+    padding: 0;
+}
+.liCategorie{
+    background: #33ffff; 
+    border-left: 1px solid #EEE;
+    border-right: 1px solid #999;
+    border-top:  1px solid #999;
+    border-bottom:  1px solid #EEE;
+    float:right;
+    height: 25px;
+    list-style: linear-gradient;
+    font: bold 1em sans-serif;
+    margin: 0 0 0 2px;
+    cursor: pointer;
+}
+.divSousCategorie{
+    margin: 0;
+    padding: 0;
+}
+.liSousCategorie{
+   background: #33ffff;
+    border: 1px ; 
+    float:left;
+    height: 20px;
+    list-style: none;
+    margin: 0 0 0 1px;
+}
+.liCategorie:hover{
+    background: #ffff00;
+}
+.selectedTab{
+    background: #EEE;
+    border-bottom: #EEE; 
+}
+#handle{
+    
+}
+.new{
+     
+}
+.form{
+    background:  #33ffff;
+    border: 10px;
+    top: 10px;
+    width: 300px;
+    height: 100%;
+}
+#login{
+   clear: both; 
+}
+#email{
+  clear: both;    
+}
+#password{
+   clear: both;   
+}
+#phone{
+ clear: both;     
+}
+#adresse{
+  clear: both;    
+}
+.formCNX {
+background:  #33ffff;
+    border: 10px;
+    top: 10px;
+    width: 300px;
+    height: 100%;
+}
+
+#password1 {
+
+}
+
+#Connexion {
+
+}
+
+#inscription {
+
+}
+#Connexion:hover{
+    background: #ffff00;
+}
+#inscription:hover{
+    background: #ffff00;
+}
+#valider {
+
+}
+#valider:hover{
+    background: #ffff00;
+}
+
+
+.form1 {
+    background:  #33ffff;
+    border: 10px;
+    top: 10px;
+    width: 650px;
+    height: 100%;
+
+}
+.form1 table {
+ border-width:1px; 
+ border-style:solid; 
+ border-color:black;
+ width:50%;
+ }
+
+.formOp {
+background:  #33ffff;
+border: 10px;
+top: 10px;    
+margin-left: 651px;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: 10px;
+width: 650px;
+height: 100%;
+}
+.inclineLeft{
+    transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -webkit-transform: rotate(8deg);
+    -khtml-transform: rotate(8deg);
+}
+
+#ligne {
+    background:  #6633ff;
+    width: 2px;
+    height: 60px;
+    margin: 10px;
+    border: 10px;
+}
+
+.parrinage {
+background:  #33ffff;
+border: 10px;
+top: 10px;    
+margin-left: 651px;
+margin-right: auto;
+margin-top: auto px;
+margin-bottom: 10px;
+width: 650px;
+height: 100%;
+}
+
+.inclineRight {
+ transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -webkit-transform: rotate(-18deg);
+    -khtml-transform: rotate(8deg);
+}

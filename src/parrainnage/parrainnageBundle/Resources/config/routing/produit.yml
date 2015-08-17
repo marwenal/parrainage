@@ -1,0 +1,30 @@
+produit:
+    pattern:  /
+    defaults: { _controller: "parrainnageBundle:Produit:index" }
+
+produit_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "parrainnageBundle:Produit:show" }
+
+produit_new:
+    pattern:  /new
+    defaults: { _controller: "parrainnageBundle:Produit:new" }
+
+produit_create:
+    pattern:  /create
+    defaults: { _controller: "parrainnageBundle:Produit:create" }
+    requirements: { _method: post }
+
+produit_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "parrainnageBundle:Produit:edit" }
+
+produit_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "parrainnageBundle:Produit:update" }
+    requirements: { _method: post|put }
+
+produit_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "parrainnageBundle:Produit:delete" }
+    requirements: { _method: post|delete }

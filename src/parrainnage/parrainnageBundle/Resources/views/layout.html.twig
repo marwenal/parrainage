@@ -1,0 +1,236 @@
+    {% extends '::base.html.twig' %}
+{% block body%}
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<meta name="author" content=""/>
+<meta name="robots" content="index,follow"/>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-language" content="fr"/>
+<meta name="geo.region" content=""/>
+<meta name="geo.position" content=""/>
+<meta name="ICBM" content=""/>
+<meta name="DC.Publisher" content=""/>
+
+<link rel="stylesheet" href="{{asset('bundles/parrainnage/css/style.css')}}" type="text/css"/>
+<link rel="stylesheet" href="{{asset('bundles/parrainnage/css/tabulation.css')}}" type="text/css"/>
+<link rel="stylesheet" href="{{asset('bundles/parrainnage/css/simpletabss.css')}}" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/grid.css')}}"  media="screen" /> 
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/styless.css')}}"  media="screen" />
+ <script type="text/javascript" src="{{asset('bundles/parrainnage/lib/jquery-1.10.1.min.js')}}"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="{{asset('bundles/parrainnage/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="{{asset('bundles/parrainnage/source/jquery.fancybox.js?v=2.1.5')}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/source/jquery.fancybox.css?v=2.1.5')}}" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/source/helpers/jquery.fancybox-buttons.css?v=1.0.5')}} "/>
+	<script type="text/javascript" src="{{asset('bundles/parrainnage/source/helpers/jquery.fancybox-buttons.js?v=1.0.5')}}"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7')}}" />
+	<script type="text/javascript" src="{{asset('bundles/parrainnage/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7')}}"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="{{asset('bundles/parrainnage/source/helpers/jquery.fancybox-media.js?v=1.0.6')}}"></script>
+	
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link rel="publisher" href=""/>
+<link rel="author" href=""/>
+<link rel="stylesheet" href="{{asset('bundles/parrainnage/js/style.css')}}" />
+	<link rel="stylesheet" href="{{asset('bundles/parrainnage/css/notification.css')}}" type="text/css"/>
+<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$("a#example5").fancybox({
+	'scrolling'		: 'no',
+	'titleShow'		: false,
+	'onClosed'		: function() {
+	    $("#login_error").hide();
+	}
+});
+
+			
+			
+		});
+</script>
+<div class="wrapper">
+
+<div class="header">
+    
+<div class="content">
+        
+<div class='fluid'>
+    <section class='top-nav last'>
+      
+    
+           
+        <li> <a href="#inline2" id="example5"  class="dashboard-module">
+                	<img src="{{asset('bundles/parrainnage/image/invitation.jpg')}}" width="64" height="64" alt="edit" />
+                	<span>Envoyer une invitation</span>
+                </a>
+        <li>
+                <a href="{{ path('parrainnage_homepage',{ 'id': app.user.id}) }}" class="dashboard-module">
+                	<img src="{{asset('bundles/parrainnage/image/invitations.jpg')}}"  width="64" height="64" alt="edit" />
+                <span>Mes invitations</span>	
+                </a>
+                
+        <li>
+                <a href="#inline1" id="example5"  class="dashboard-module">
+                	<img src="{{asset('bundles/parrainnage/image/cadeau.jpg')}}"  width="64" height="64" alt="edit" />
+                        <span>Mes cadeaux</span>
+                </a>
+               <span class='rednum'>{{ render(controller("parrainnageBundle:Invitation:Avoir", {'id': app.user.id})) }} </span> 
+        </li>
+        <li> 
+                
+                <a href="{{ path('fos_user_change_password')}}" class="dashboard-module">
+                	<img src="{{asset('bundles/parrainnage/image/Crystal_Clear_user.gif')}}"  width="64" height="64" alt="edit" />
+                	<span>Mon profile</span>
+                </a>
+        <li>
+                <a href="{{ path('parrainnage_cadeaux',{ 'id': app.user.id})}}" class="dashboard-module">
+                	<img src="{{asset('bundles/parrainnage/image/Crystal_Clear_settings.gif')}}"  width="64" height="64" alt="edit" />
+                	<span>Contrôles</span>
+                </a>
+                <div style="clear: both"></div>
+       
+              </section>
+</div>
+      <div style="display: none;">
+             <div id="inline2" >
+          {{ render(controller("parrainnageBundle:Invitation:sendMail",{ 'email': app.user.email ,'id': app.user.id})) }} 
+            
+             </div>
+</div>
+    <div style="display: none;">
+             <div id="inline1" >
+            Vous avez {{ render(controller("parrainnageBundle:Invitation:Avoir", {'id': app.user.id})) }} cadeaux de mon siteWeb.com
+            <div class="contain">
+    
+    <ul id="notificationMenu" class="notifications">
+      <li class="titlebar">
+        <span class="title">Notifications</span>
+        <span class="settings"><i class="icon-cog"></i>
+        </span>
+      </li>
+      <div class="notifbox">
+        <li class=" notif unread">
+          <a href="#">
+            <div class="imageblock"> 
+              <img src="https://si0.twimg.com/profile_images/3186728694/7a0e012910e06dd1476c5edac8b9a28d_bigger.jpeg" class="notifimage"  />
+            </div> 
+            <div class="messageblock">
+              <div class="message">This guy <strong>Jonesy</strong> has just built a tower.
+              </div>
+              <div class="messageinfo">
+                <i class="icon-trophy"></i>2 hours ago
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class=" notif unread">
+          <a href="#">
+            <div class="imageblock">
+              <img src="https://si0.twimg.com/profile_images/712543138/Self-Portrait-in-Stripes_bigger.jpg" class="notifimage"  />
+            </div> 
+            <div class="messageblock">
+              <div class="message">
+                <strong>Pete Nawara</strong> want's to drink beer with you
+              </div>
+              <div class="messageaction">
+                <a class="button tiny success">accept</a> 
+                <a class="button tiny alert">decline</a>
+              </div>
+              <div class="messageinfo">
+                <i class="icon-flag"></i>3 hour ago
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class=" notif">
+          <a href="#">
+            <div class="imageblock"><img src="https://si0.twimg.com/profile_images/3312733808/5caeaec6d93114657c40fb257f933d28_bigger.jpeg" class="notifimage" />
+            </div> 
+            <div class="messageblock">
+              <div class="message"><strong>Gary LaPlante</strong> has talked some trash: "<em>Buncha bitches.</em>
+              </div>
+              <div class="messageinfo">
+                <i class="icon-comment"></i>4 hours ago
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class=" notif">
+          <a href="#">
+            <div class="imageblock"><img src="https://si0.twimg.com/profile_images/378800000168755934/c05afa029d7e42c59e7cca0ea0564a86_bigger.jpeg" class="notifimage" /></div> 
+            <div class="messageblock">
+              <div class="message"><strong>Jason Nawara</strong> is probably playing <strong>Smite</strong> right now.
+              </div>
+              <div class="messageinfo"><i class="icon-trophy"></i>Yesterday</div>
+            </div>
+          </a>
+        </li>
+        <li class=" notif">
+          <a href="#">
+            <div class="imageblock"><img src="https://si0.twimg.com/sticky/default_profile_images/default_profile_2_bigger.png" class="notifimage"  />
+            </div> 
+            <div class="messageblock">
+              <div class="message"><strong>Danny DK12</strong> got a sweet fade!</div>
+
+              <div class="messageinfo"><i class="icon-flag"></i>Yesterday</div>
+            </div>
+          </a>
+        </li>
+        <li class=" notif">
+          <a href="#">
+            <div class="imageblock"><img src="https://si0.twimg.com/profile_images/1091562021/me-small_bigger.png" class="notifimage"  /></div> 
+            <div class="messageblock">
+              <div class="message"><strong>Roidberg</strong> left you a comment: "<em>Hey buddy! Nice toenails!"</em></div>
+              <div class="messageinfo"><i class="icon-comment"></i>2 hours ago</div>
+            </div>
+          </a>
+        </li>
+      </div>
+      <li class="seeall">
+        <a>See All</a>
+      </li>
+    </ul>
+             </div>
+</div>
+    
+</div>
+	<div class="content-left">
+    
+			
+        <div class="box4">
+{% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+            
+  </div>
+        </div>
+
+        </div>
+
+        
+        </div>
+</div>
+
+    </body>
+    
+{% endblock%}
+
+
+

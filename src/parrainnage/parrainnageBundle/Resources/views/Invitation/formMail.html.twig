@@ -1,0 +1,26 @@
+{% extends "parrainnageBundle::index.html.twig" %}
+
+{% block invitation %}
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/reset.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/structure.css')}}">
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    
+<form action="{{ path('parrainnage_sendMail',{ 'email': app.user.email ,'id': app.user.id}) }}"  method="POST"class="box login" >
+    
+    <fieldset class="boxBody"><label>pour Inviter un (e)personne: </label>
+    
+    <label>Enter son adresse email:</label>
+        <input type="text" name="recu" />
+    
+    </fieldset>
+    <footer>
+       <input type="submit" class="btnLogin" value="Envoyer" tabindex="4">
+    </footer>
+</form>
+{% else %}
+<a href="{{ path('fos_user_security_login') }}"></a> 
+    
+
+    {%endif %}
+{% endblock invitation %}

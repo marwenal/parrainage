@@ -1,0 +1,59 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/reset.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/css/structure.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/produit/index.css')}}"/>
+<script type="text/javascript" src="{{asset('bundles/parrainnage/produit/jquery-1.9.0.min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('bundles/parrainnage/produit/index.js')}}"> </script>
+
+{% if error %}
+    <div>{{ error|trans }}</div>
+{% endif %}
+<body class="body">
+    <input type="button" class="btnLogin" value="Connexion" id="Connexion"/>
+    
+    <input type="button" value="inscription" class="btnLogin" id="inscription"/>
+<div class="box_form_auth"  style="margin:0 auto;">
+    <div id="form_auth">
+<form action="{{ path("fos_user_security_check") }}" method="post" class="box login">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <fieldset class="boxBody">
+	  <label>Adresse e-mail:</label>
+	  <input type="text" tabindex="1" id="username" name="_username" value="{{ last_username }}"  required>
+	  <label><a href="#" class="rLink" tabindex="5">Mot de passe oublier?</a>Mot de passe:</label>
+	  <input type="password" tabindex="2" id="password" name="_password" required>
+	</fieldset>
+	<footer>
+	  <label><input type="checkbox" tabindex="3" id="remember_me" name="_remember_me" value="on">Se souvenir de moi</label>        
+           <input type="submit" class="btnLogin" value="Valider" tabindex="4">
+	</footer>
+
+    </form>
+    </div>
+
+    <div class="boxBody" id="form" >
+{{ render(controller('FOSUserBundle:Registration:register'))}}
+    </div>
+</div>
+</body>
+    <script type="text/javascript">
+    jQuery(document).ready(function($){       
+     $('#form').hide();
+     $('#inscription').click(function(e){
+         $('#form_auth').fadeOut();
+        $('#form').fadeToggle();
+    });
+    
+});
+    </script>
+     <script type="text/javascript">
+    jQuery(document).ready(function($){       
+     $('#Connexion').click(function(e){
+         $('#form').fadeOut();
+         $('#form_auth').fadeToggle();
+    });
+    
+});
+    </script>
+{% endblock fos_user_content %}

@@ -1,0 +1,4 @@
+parrainnage:
+    resource: "@parrainnageBundle/Resources/config/routing.yml"
+    prefix:   /
+   

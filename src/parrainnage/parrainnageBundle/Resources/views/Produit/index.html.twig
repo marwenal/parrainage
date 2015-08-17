@@ -1,0 +1,81 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+<link rel="stylesheet" type="text/css" href="{{asset('bundles/parrainnage/produit/index.css')}}"/>
+<script type="text/javascript" src="{{asset('bundles/parrainnage/produit/jquery-1.9.0.min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('bundles/parrainnage/produit/index.js')}}"> </script>
+
+    <h1>Produit list</h1>
+
+    <table class="form1" id="form">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Quantite</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a id="id" href="{{ path('produit_show', { 'id': entity.id }) }}" >{{ entity.id }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prix }}</td>
+                <td>{{ entity.quantite }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('produit_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('produit_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                    
+                </td>
+                <td> <input type="checkbox" id="{{ entity.id }}"/></td>
+                <td><img id="sup" src="{{ asset('bundles/parrainnage/image/supp.png') }}" alt="" width="25" height="25" />
+               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+           <input type="checkbox" name="all" id="all"/><span id='coche'>Select all</span>
+
+        <ul>
+        <li>
+            <a href="{{ path('produit_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+        <script type="text/javascript">
+    $('#sup').click(function(){
+        
+   $("input[type='checkbox']:checked").each(
+          function() {
+           alert($(this).attr('id'));
+          });          
+         }
+    );
+        
+});
+</script>  
+ <script type="text/javascript">
+     $(document).ready(function() {
+    $('#all').click(function(){
+        if(this.checked){
+        $(":checkbox").attr('checked', true);
+        $('#coche').html('Deselect');
+    }
+    else{
+        $(":checkbox").attr('checked', false);      
+        $('#coche').html('Select all');
+    }
+});
+});
+</script>
+    {% endblock %}

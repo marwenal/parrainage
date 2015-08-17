@@ -1,0 +1,46 @@
+parrainnage_homepage:
+    pattern:  /profile/{id}
+    defaults: { _controller: parrainnageBundle:Invitation:index }
+parrainnage_red:
+    pattern:  /red
+    defaults: { _controller: parrainnageBundle:Invitation:red }
+parrainnage_cadeaux:
+    pattern:  /cadeaux/{id}
+    defaults: { _controller: parrainnageBundle:Invitation:Invit }   
+parrainnage_cadeau:
+    pattern:  /cadeau/{id}
+    defaults: { _controller: parrainnageBundle:Invitation:Avoir }
+parrainnage_parrai:
+    pattern:  /parrai
+    defaults: { _controller: parrainnageBundle:Parrainage:Index }    
+parrainnage_sendMail:
+    pattern:  /{email}/sendMail/{id}
+    defaults: { _controller: parrainnageBundle:Invitation:sendMail }    
+fos_user_security:
+   resource: "routing/security.xml"
+   prefix: /
+ 
+fos_user_profile:
+   resource: "routing/profile.xml"
+   prefix: /
+ 
+fos_user_register:
+   resource: "routing/registration.xml"
+   prefix: /register
+ 
+fos_user_resetting:
+   resource: "routing/resetting.xml"
+   prefix: /resetting
+ 
+fos_user_change_password:
+    resource: "routing/change_password.xml"
+    prefix: /password 
+    
+parrainnageBundle_cadeau:
+        resource: "routing/cadeau.yml"
+        prefix:   /cadeau
+parrainnageBundle_produit:
+        resource: "routing/produit.yml"
+        prefix:   /produit    
+    
+

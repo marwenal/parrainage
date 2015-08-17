@@ -1,0 +1,11 @@
+parameters:
+    parrainnage.RegistrationFormType.class: parrainnage\parrainnageBundle\Form\Type\RegistrationFormType
+   
+
+services:
+    parrainnage.RegistrationFormType:
+        class: %parrainnage.RegistrationFormType.class%
+        tags:
+            - { name: form.type, alias: parrainnage_user_registration}
+        arguments: [%fos_user.model.user.class%]
+      
