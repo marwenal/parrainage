@@ -8,7 +8,7 @@ parameters:
     database_password: null
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
-    mailer_user: malyaoui@gmail.com
-    mailer_password: 12345678TMM
+    mailer_user: 
+    mailer_password: 
     locale: fr
     secret: 9d0628a55b4786702704996fb5c4bbba7689204a
